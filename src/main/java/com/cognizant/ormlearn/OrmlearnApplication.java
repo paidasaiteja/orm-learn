@@ -60,7 +60,7 @@ public class OrmlearnApplication {
 	CommandLineRunner testAddCountry() {
 		return args -> {
 			logger.info("START...");
-			countryService.addCountry(new Country("AB", "Arab"));
+			countryService.addCountry(new Country("AB", "UnknownPlace"));
 			logger.info("END...");
 		};
 	}
@@ -205,10 +205,10 @@ public class OrmlearnApplication {
 	CommandLineRunner testAddEmployee() {
 		return args -> {
 			logger.info("START... for Add Employee");
-			Employee.builder().name("Nishanth").salary(500000.00).permanent(true)
+			Employee.builder().name("SaiTeja").salary(500000.00).permanent(true)
 					.dateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse("2019-09-01")).build();
 			Department department = departmentService.findDepartment(3);
-			Employee employee = Employee.builder().name("Nithin").salary(700000.00).permanent(false)
+			Employee employee = Employee.builder().name("Abhishek").salary(700000.00).permanent(false)
 					.dateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse("1993-07-02")).department(department).build();
 			employeeService.saveEmployee(employee);
 			logger.info("Employee Details -> {}", employee);
